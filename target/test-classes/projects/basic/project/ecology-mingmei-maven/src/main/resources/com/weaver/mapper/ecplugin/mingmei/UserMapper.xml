@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weaver.mapper.ecplugin.mingmei.UserMapper">
+
+    <select id="getUserList" resultType="com.ecplugin.mingmei.pojo.User">
+        select * from hrmresource
+        <where>
+            <if test="lastname != null">
+                and lastname like CONCAT('%',#{lastname},'%')
+            </if>
+        </where>
+        order by id
+        limit #{offset},#{pageSize}
+    </select>
+
+    <select id="getUserCount" resultType="java.lang.Long">
+        select count(1) from hrmresource
+        <where>
+            <if test="lastname != null">
+                and lastname like CONCAT('%',#{lastname},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="getUserById" resultType="com.ecplugin.mingmei.pojo.User">
+		select * from  hrmresource where id=#{id}
+	</select>
+
+    <select id="getUserByLoginId" resultType="com.ecplugin.mingmei.pojo.User">
+		select * from  hrmresource where loginId=#{loginId} and status in (0,1,2,3) limit 1
+	</select>
+
+</mapper>
