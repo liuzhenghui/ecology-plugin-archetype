@@ -1,0 +1,32 @@
+<assembly>
+    <id>package</id>
+
+    <formats>
+        <format>dir</format>
+    </formats>
+
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <!--  二开  -->
+        <fileSet>
+            <directory>target/</directory>
+            <includes>
+                <include>_*-package.zip</include>
+            </includes>
+            <outputDirectory></outputDirectory>
+            <fileMode>0755</fileMode>
+        </fileSet>
+
+        <!--  部署脚本  -->
+        <fileSet>
+            <includes>
+                <include>deploy*.sh</include>
+            </includes>
+            <outputDirectory></outputDirectory>
+            <fileMode>0755</fileMode>
+        </fileSet>
+    </fileSets>
+
+
+</assembly>

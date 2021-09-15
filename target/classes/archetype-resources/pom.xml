@@ -151,12 +151,28 @@
                     </descriptors>
                 </configuration>
                 <executions>
+                    <!-- 打包 -->
                     <execution>
                         <id>make-assembly</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>
+                    </execution>
+                    <!-- 自动部署包 -->
+                    <execution>
+                        <id>make-deploy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <appendAssemblyId>false</appendAssemblyId>
+                            <finalName>deploy</finalName>
+                            <descriptors>
+                                <descriptor>${basedir}/src/assembly/deploy.xml</descriptor>
+                            </descriptors>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
