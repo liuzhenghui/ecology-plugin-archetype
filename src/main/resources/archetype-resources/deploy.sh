@@ -1,21 +1,20 @@
 #!/bin/bash
 
-# ============ 获取参数  ============
-
 PROG_NAME=$0
 ACTION=$1
 
-DEPLOY_HOME=$2                                                   # 部署解压文件等操作目录
-ECOLOGY_PORT=$3                                                  # 应用端口
-ECOLOGY_HOME=$4                                                  # ecology 目录
-JDK_HOME=$5                                                      # jdk 目录
-MIDDLEWARE_HOME=$6                                               # 中间件 目录
-START_CMD=$7                                                     # 启动命令
-PACKAGE_NAME=$8                                                  # 包名(不含后缀)
-START_TIMEOUT=600                                                # 启动超时时间(秒)
-HEALTH_CHECK_URL=http://127.0.0.1:${ECOLOGY_PORT}/api/ecode/sync # 应用健康检查URL
-
-# ===========================================
+echo '\r---------------- 环境参数 -----------------'
+echo "\r - ACTION : ${ACTION}"
+echo "\r - DEPLOY_HOME : ${DEPLOY_HOME}"
+echo "\r - ECOLOGY_PORT : ${ECOLOGY_PORT}"
+echo "\r - ECOLOGY_HOME : ${ECOLOGY_HOME}"
+echo "\r - JDK_HOME : ${JDK_HOME}"
+echo "\r - MIDDLEWARE_HOME : ${MIDDLEWARE_HOME}"
+echo "\r - START_CMD : ${START_CMD}"
+echo "\r - PACKAGE_NAME : ${PACKAGE_NAME}"
+echo "\r - START_TIMEOUT : ${START_TIMEOUT}"
+echo "\r - HEALTH_CHECK_URL : ${HEALTH_CHECK_URL}"
+echo '\r------------------------------------------'
 
 # 拷贝文件
 copy_files() {
