@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Implementation-Title: ${com.ecplugin.name}
-Implementation-Version: ${com.ecplugin.version}
-Implementation-Vendor: 蚂蚁战队
-EcPlugin-Name: ${com.ecplugin.name}
-EcPlugin-Key: ${com.ecplugin.key}
-EcPlugin-Version: ${com.ecplugin.version}
-EcPlugin-Timestamp: ${com.ecplugin.timestamp}
